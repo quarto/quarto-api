@@ -1,5 +1,5 @@
 {
-  "name": "node-restful-api",
+  "name": "quarto-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alfonzm/node-restful-api.git"
+    "url": "git+https://github.com/quarto/quarto-api"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alfonzm/node-restful-api/issues"
-  },
-  "homepage": "https://github.com/alfonzm/node-restful-api#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",

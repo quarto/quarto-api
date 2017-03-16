@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 
 // Setup mongoose
-const db = 'mongodb://localhost/dbname';
+const db = 'mongodb://localhost/quarto';
 mongoose.Promise = global.Promise;
 mongoose.connect(db);
 
