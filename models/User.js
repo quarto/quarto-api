@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+var UserSchema = new Schema({
 	username: {
 		type: String,
 		required: true,
+		unique: true,
 		minlength: [4, 'Username must be 4 characters or more.'],
 	},
 	password: {
@@ -15,6 +17,7 @@ const userSchema = new Schema({
 	email: {
 		type: String,
 		required: true,
+		unique: true,
 		minlength: [],
 	},
 	first_name: String,
@@ -33,9 +36,18 @@ const userSchema = new Schema({
 	rental_type_preferences: Array,
 	bio: String,
 	rentals: Array,
-	following: Array
+	following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	is_deleted: {
+		type: Boolean,
+		default: false
+	}
+}, {
+	timestamps: {
+		createdAt: 'created_at',
+		updatedAt: 'updated_at'
+	},
 });
 
-module.exports = mongoose.model('Users', userSchema);
-// const User = mongoose.model('User', userSchema);
-// export default User;
+UserSchema.plugin(uniqueValidator);
+
+module.exports = mongoose.model('User', UserSchema);

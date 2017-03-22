@@ -1,6 +1,8 @@
-# node-restful-api
+# quarto-api
 
-Boilerplate for a Node.js RESTful API using express, mongoose, etc.
+Back-end API for quarto.
+
+### Usage
 
 ```
 $ yarn
